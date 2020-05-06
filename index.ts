@@ -18,7 +18,7 @@ let font: Style;
 interface Person {
     first: string;
     last: string;
-    // [key: string]: any; - this lets you use add any additional key value pair, with any value.
+    [key: string]: any; // - this lets you use add any additional key value pair, with any value.
 }
 
 const person: Person = {
@@ -29,5 +29,32 @@ const person: Person = {
 const person2: Person = {
     first: "William",
     last: "Tell",
-    // fast: true - this doesn't match the custom type, so throws an error
+    fast: true // needs to match the custom type Person 
 }
+
+// Functions
+function pow(x: number, y: number): string { // you can use void here, instead of string, if you are not returning a value.
+    return Math.pow(x, y).toString();
+}
+
+pow(5, 10);
+
+// Array
+type MyList = [number?, string?, boolean?]; // ? means optional, in this case
+const arr: MyList = []; // :number[] :Person[]
+// const arr: Person[] = [];
+
+arr.push(1);
+arr.push('23');
+arr.push(false);
+
+// Generics
+
+class Observable<T> {
+    constructor(public value: T) {}
+}
+
+let x: Observable<number>;
+let y: Observable<Person>;
+let z = new Observable(23);
+

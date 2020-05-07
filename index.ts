@@ -1,3 +1,18 @@
+// Things I've learned in Typescript
+
+// Installation and compile command line. tsc
+// tsconfing.json
+// third party librarys may need type annotation extensions.
+// tooling -- typescript catches mores bugs than vanilla js
+// valid js code is also valid in ts
+// can declare types for variables 
+// can create custome types
+// Arrays and objects can be told to hold certain types
+// Generics allow arrays/objects to hold a variety of types.
+// Public vs private
+
+
+
 import * as _ from 'lodash';
 
 async function hello() {
@@ -58,3 +73,20 @@ let x: Observable<number>;
 let y: Observable<Person>;
 let z = new Observable(23);
 
+
+type numArray = Array<number>;
+
+
+const last = (arr: Array<any>) => {
+    return arr[arr.length - 1];
+}
+
+// const last = <T>(arr: T[]) => {
+//     return arr[arr.length - 1];
+// }
+
+const l = last([1, 2, 3]);
+
+const l2 = last(['a', 'b', 'c']);
+
+console.log(l,l2);

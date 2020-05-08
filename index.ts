@@ -11,8 +11,6 @@
 // Generics allow arrays/objects to hold a variety of types.
 // Public vs private
 
-
-
 import * as _ from 'lodash';
 
 async function hello() {
